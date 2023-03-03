@@ -22,4 +22,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('hotel',[HotelController::class, 'create']);
+Route::get('hotel',[HotelController::class, 'list']);
 Route::post('habitacion',[HabitacionController::class, 'create']);
+Route::get('habitacion/{id}',[HabitacionController::class, 'list']);

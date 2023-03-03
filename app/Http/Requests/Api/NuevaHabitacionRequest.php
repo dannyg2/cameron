@@ -30,7 +30,7 @@ class NuevaHabitacionRequest extends FormRequest
         return [
             "cantidad"=>["required","integer",new MaxCantidad($this->all())],
             "tipo_habitacion"=>["required",Rule::in([Habitacion::TYPE_HABITACION_ESTANDAR,Habitacion::TYPE_HABITACION_JUNIOR,Habitacion::TYPE_HABITACION_SUIT])],
-            "tipo_acomodacion"=>["required",new ValidatTipoAcomodacion($this->all())],
+            "tipo_acomodacion"=>["required"],
         ];
     }
 }

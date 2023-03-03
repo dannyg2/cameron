@@ -31,7 +31,7 @@ class ValidatTipoAcomodacion implements Rule
      */
     public function passes($attribute, $value)
     {
-        //
+        return false;
     }
 
     /**

@@ -23,4 +23,12 @@ class HotelController extends Controller
             'hotel' => $hotel
         ],Response::HTTP_OK);
     }
+
+    public function list(){
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Hotel creado',
+            'data' => Hotel::get()
+        ],Response::HTTP_OK);
+    }
 }
