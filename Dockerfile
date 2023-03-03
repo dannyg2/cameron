@@ -26,11 +26,17 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install pdo_pgsql \
     && docker-php-source delete \
 
-COPY . /var/www/html
 
-COPY ./.env.dev /var/www/html/.env
+
+COPY "./.env.dev" ./.env
 
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-EXPOSE 80 443
+
+ENV COMPOSER_MEMORY_LIMIT=-1
+RUN composer install --no-interaction
+# RUN php artisan migrate
+RUN php artisan cache:clear
+# RUN php artisan config:cache
+RUN php artisan view:clear
