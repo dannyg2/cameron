@@ -34,10 +34,8 @@ class MaxCantidad implements Rule
     {
         $hotel = Hotel::find($this->params['hotel_id']);
         $cantidadHabitaciones = $hotel->habitaciones->sum('cantidad');
-        if($cantidadHabitaciones < ($cantidadHabitaciones + (int)$value)){
-            return false;
-        }
-        return  true;
+        $cantidad = (int)$hotel->num_habitaciones -  (int)$cantidadHabitaciones ;
+        return  $cantidad >=  (int) $value;
         
     }
 
