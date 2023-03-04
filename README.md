@@ -2,7 +2,7 @@
 ## Instalacion
 
 1. Tener instalado git , composer , apache , php version  mayor  8, y mysql
-2. Ejecutar script con el nombre backup.sql
+2. Ejecutar script con el nombre backup.sql que se encuentra en el repo de github
 3. Clonar repositorio con el siguiente link https://github.com/dannyg2/cameron.git
 4. Ejecutar el comando composer install
 5. modificar los parametros de la bd en el archivo enviroment 
